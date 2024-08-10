@@ -31,7 +31,10 @@ class MainActivity : AppCompatActivity() {
             // Request the necessary permissions
             ActivityCompat.requestPermissions(
                 this,
-                arrayOf(Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION),
+                arrayOf(
+                    Manifest.permission.ACCESS_FINE_LOCATION,
+                    Manifest.permission.ACCESS_COARSE_LOCATION
+                ),
                 LOCATION_PERMISSION_REQUEST_CODE
             )
         } else {
@@ -51,7 +54,8 @@ class MainActivity : AppCompatActivity() {
             override fun onLocationResult(locationResult: LocationResult) {
                 for (location in locationResult.locations) {
                     // Handle location update
-                    Toast.makeText(this@MainActivity, "Location: Updated!", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@MainActivity, "Location: Updated!", Toast.LENGTH_SHORT)
+                        .show()
                 }
             }
         }
